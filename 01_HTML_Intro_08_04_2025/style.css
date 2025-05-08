@@ -1,0 +1,102 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 2rem;
+     
+    /* rem / em - 
+    rem = 16px (размер шрифта браузера по умолчанию)
+    em = 16px (размер шрифта браузера по умолчанию) * 1.5 (размер шрифта элемента)
+     em = размеру шрифта ближайшего родителя у которого изменено значение размера шрифта (16px) */
+    line-height: 1.6;
+
+}
+
+h1 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+p {
+    max-width: 800px; /* максимальная ширина текста */
+    margin: 0 auto 2rem; /* центрируем текст и добавляем отступы */
+    background-color: #fff;
+    padding: 1rem 1.5rem; /* отступы внутри текста */
+    border-radius: 10px; /* скругление углов */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* тень */
+    text-align: justify; /* выравнивание текста по ширине */
+    text-indent: 30px; /* отступ первой строки */
+}
+
+a {
+    color: #2980b9; /* цвет ссылки */
+    /* text-decoration: underline; подчеркивание ссылки */
+    text-decoration: none; /* убираем подчеркивание */
+    font-weight: bold; /* жирный шрифт */
+    transition: color 0.3s ease; /* плавный переход цвета */
+    cursor: pointer; /* указатель при наведении */
+}
+
+a:hover {
+    color: #3498db; /* цвет ссылки при наведении */
+    text-decoration: underline; /* подчеркивание ссылки при наведении */
+}
+img {
+    display: block; /* блочный элемент */
+    margin: 1rem auto; /* центрируем изображение и добавляем отступы */
+    border-radius: 10px; /* скругление углов изображения */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* тень изображения */
+    transition: transform 0.3s ease; /* плавный переход увеличения */
+    /* max-width: 100%; /* максимальная ширина изображения 
+    height: auto; автоматическая высота изображения */
+   
+}
+
+img:hover {
+    transform: scale(1.05); /* увеличение изображения при наведении */
+    
+}
+
+ul, ol {
+    max-width: 600px; /* максимальная ширина текста */
+    margin: 1rem auto; /* центрируем текст и добавляем отступы */
+    background-color: #fff;
+    padding: 1rem 1.5rem; /* отступы внутри текста */
+    border-radius: 10px; /* скругление углов */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* тень */
+    text-align: justify; /* выравнивание текста по ширине */
+    text-indent: 30px; /* отступ первой строки */
+}
+li {
+    margin-bottom: 0.5rem; /* отступ между элементами списка */
+    list-style-type: disc; /* маркеры списка */
+    padding-left: 1.5rem; /* отступ слева для маркеров */
+    text-indent: -1.5rem; /* отступ первой строки */
+}
+
+table {
+    width: 80%; /* ширина таблицы */
+    border-collapse: collapse; /* убираем двойные границы */
+    margin: 2% auto; /* центрируем таблицу и добавляем отступы */
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* тень */
+    overflow: hidden; /* скрываем переполнение */
+    border: 1px solid #1b1a1a; /* граница таблицы */
+    border-radius: 10px; /* скругление углов */
+}
+
+th, td {
+    padding: .75rem 1rem; /* отступы внутри ячеек */
+    text-align: left; /* выравнивание текста по левому краю */
+    border-bottom: 1px solid #ddd; /* граница между строками */
+}
+
+th {
+    background-color: #2980b9; /* цвет фона заголовка */
+    color: #fff; /* цвет текста заголовка */
+    font-weight: bold; /* жирный шрифт заголовка */
+}
+tr:hover {
+    background-color: #f2f2f2; /* цвет фона строки при наведении */
+}

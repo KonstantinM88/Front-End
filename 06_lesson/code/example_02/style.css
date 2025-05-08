@@ -1,0 +1,30 @@
+ul {
+    list-style: none; /* убираем маркеры */
+    padding: 0; /* убираем отступы */
+   /* margin: 0; /* убираем отступы */
+}
+
+.nav-items-container {
+    display: flex;
+    justify-self: center; /* выравнивание по оси (центр) */
+   /* flex-direction: column; /* расположение элементов в колонку, row - по строке */
+    gap: 28px;
+}
+
+main {
+    display: flex;
+    justify-content: space-between ;/* выравнивание по оси (всё пустое) */
+    gap: 30px; /* расстояние между элементами */
+}
+
+section {
+    width: 50%;
+}
+
+.left-nav-items-container {
+    display: flex;
+    flex-direction: column; /* расположение элементов в колонку, row - по строке */
+    gap: 12px;
+
+    padding: 24px 0 0 0; /* отступы сверху, справа, снизу, слева */
+}

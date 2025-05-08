@@ -1,0 +1,30 @@
+.card {
+    background-color: lightcoral;
+    padding: 14px;
+   /* margin: 20px; */ /* отступы вокруг элемента */
+    border-radius: 18px;
+    height: 400px;
+    width: 300px;
+}
+
+.container {
+    display: flex; /* расположение элементов в строку */
+    /* justify-content: center; /* выравнивание по оси (центр) */
+    /* justify-content: flex-start; /* выравнивание по оси (в начале) */
+    /* justify-content: space-between; /* выравнивание по оси (всё пустое) */
+   /* justify-content: space-around; /* выравнивание по оси (распределяет равномерно) */
+    justify-content: center; /* выравнивание по оси (центр) */
+    gap: 20px; /* расстояние между элементами */
+    
+}
+.container2 {
+    display: flex; /* расположение элементов в строку */
+    flex-direction: column; /* расположение элементов в колонку, row - по строке */
+  /*  justify-content: center; /* выравнивание по оси (центр) */
+    gap: 20px; /* расстояние между элементами */
+}
+.container3 {
+    display: flex; /* расположение элементов в строку */
+    flex-wrap: wrap; /* перенос элементов на новую строку */
+    gap: 24px 50px; /* расстояние между элементами по оси X и Y */
+}

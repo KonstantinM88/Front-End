@@ -1,0 +1,59 @@
+body {
+  /* rgb - red, green, blue */
+  background-color: whitesmoke;
+}
+
+form {
+  border: 1px solid #ccc;
+  padding: 0 25px; /* Сверху и снизу 0, по бокам 25 */
+  border-radius: 5px;
+  width: 80%;
+  margin: 0 auto;
+  line-height: 1.5;
+  max-width: 400px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+div {
+  margin: 15px 0;
+}
+
+#name, #email, #password, #phone {
+  width: 100%;
+  padding: 5px 0 5px 5px; /* Начиная сверху и по часовой стрелке */
+  border-radius: 5px;
+    border: #ccc;
+  
+}
+.btn {
+    width: fit-content;
+    margin: 20px auto 30px; /* Сверху 20, снизу 30, по бокам авто */
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+button[type="reset"] {
+    background-color: #f44336; /* Красный */
+    color: white;
+}
+
+button[type="reset"]:hover {
+    background-color: #e53935; /* Темно-красный */      
+    /* background-color: #008CBA; /* Синий */
+    color: white; 
+}
+
+button[type="submit"] {
+    background-color: #4CAF50; /* Зеленый */
+    color: white;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049; /* Темно-зеленый */
+    color: white;
+}

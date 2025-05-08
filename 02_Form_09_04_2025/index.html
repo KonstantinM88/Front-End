@@ -1,0 +1,115 @@
+<!-- "!" для шаблона html-document -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+  </head>
+  <body>
+    <h1>Signup form</h1>
+
+    <form action="/register">
+      <label for="name">Name: </label>
+      <input id="name" type="text" placeholder="Enter your name..." required />
+<div>
+    <br>
+      <label for="email">Email: </label>
+      <input
+        id="email"
+        type="email"
+        placeholder="Enter your email..."
+        required
+      />
+    </div>
+    <div>
+    <br />
+      <label for="password">Password: </label>
+      <!-- minlength="8" - минимальная длина 8 символов -->
+
+
+
+
+      <input
+        
+        id="password"
+        type="password"
+        placeholder="Enter your password..."
+        title="Требуется минимум 8 символов, заглавная буква"
+        pattern="(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[@$!%*?%]).{8,}"
+        required
+      />
+    </div>
+
+    <div>
+        <br>
+
+    
+      <label for="phone">Phone: </label>
+      <!-- minlength="8" - минимальная длина 8 символов -->
+      <input
+        
+        id="phone"
+        type="tel"
+        placeholder="Enter your phone number..."
+        title="Example: +123 456 7890"
+        pattern="\+?[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
+        required
+      />
+    </div>
+    <div>
+        <br>    
+
+      <label for="hobby">Hobby:</label>
+      <select name="" id="hobby" required>
+        <option value="" >Select your hobby</option>
+        <option value="sport">Football</option>
+        <option value="sport">Volleyball</option>
+        <option value="music">Guitar</option>
+        <option value="music">Piano</option>
+      </select>
+
+      <label for="agreement">Agreement: </label>
+      <!-- согласие -->
+      <input
+        
+        id="agreement"
+        type="checkbox"
+        
+        required
+      />
+
+    <br>
+<br>
+      <label for="male">Male: </label>
+      <!-- выбрать пол -->
+      <input
+        name="gender"
+        id="male"
+        type="radio"
+        
+        required
+      />
+      <label for="female">Female: </label>
+      <!--  -->
+      <input
+         name="gender"
+        id="female"
+        type="radio"
+         
+    
+      />
+      <!-- div - блочный элемент по умолчанию -->
+      <!-- span - строчный элемент по умолчанию -->
+      <!-- br break row прервать строчку -->
+      <!-- hr horizontal row горизонтальная линия -->
+      <br />
+      <br />
+
+      <div>
+        <button type="reset">Reset</button>
+        <button type="submit">Register</button>
+      </div>
+    </form>
+  </body>
+</html>

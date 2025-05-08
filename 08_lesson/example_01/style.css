@@ -1,0 +1,47 @@
+html {
+    font-size: 16px;
+}
+
+.card {
+  width: 250px;
+  height: 300px;
+  background-color: lightcyan;
+  border-radius: 18px;
+  font-size: 1rem;
+  /* rem - относительная единица измерения, равная 16px */
+ 
+}
+
+.card p {
+  font-size: 2em; /* вертикальный размер текста */
+   /* em - относительная единица измерения, равная размеру шрифта родителя */
+ /* font-weight: bold; /* жирный текст */ 
+  color: #333;
+  margin: 0; /* убираем отступы */
+  padding: 10px; /* внутренний отступ текста */
+  text-align: center; /* выравнивание текста по центру */
+}
+/* mobile first */
+
+/* breakpoints */
+@media (min-width: 480px) {
+  .card {
+    width: 400px;
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .card {
+    width: 700px;
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card {
+    width: 1000px;
+  }
+}
+
+/* 10px 1rem 1.5em 10% */

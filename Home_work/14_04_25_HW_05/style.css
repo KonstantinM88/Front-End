@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+body {
+  background-color: whitesmoke;
+  min-width: 1400px;
+}
+
+header {
+  height: 50px;
+  width: 100%;
+  text-align: center;
+  font-size: 42px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-style: italic;
+}
+
+h2 {
+  font-weight: bold;
+  color: #553a1e;
+  font-size: 1.4rem;
+}
+
+p {
+  font-weight: normal;
+  font-size: 1.3rem;
+  color: #333;
+}
+
+.line {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.navigation {
+  background-color: rgb(26, 25, 25);
+  color: white;
+  padding: 24px;
+  position: fixed;
+  top: 0;
+  z-index: 6;
+}
+
+.blurred-text {
+  height: 70px;
+  position: absolute;
+  font-size: 1.2rem;
+  overflow: hidden;
+  color: gray;
+  filter: blur(3px);
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.front-text {
+  position: relative;
+  font-size: 4rem;
+  color: white;
+  font-weight: bold;
+  z-index: 6;
+}
+
+.sticky-container {
+  height: 1400px;
+  position: relative;
+  top: 120px;
+}
+
+.info {
+    background-color: antiquewhite;
+    height: 50px;
+    width: 300px;
+    border-radius: 18px;
+    padding: 10px;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0.4);
+    position: sticky;
+    top: 120px;
+    transition: height 1s ease; 
+  }
+  
+  .info:hover {
+    height: 300px; 
+  }
+
+
+.name {
+  margin-left: 80px;
+}
+
+.personal {
+  margin-left: 440px;
+}
+
+.foto {
+  margin-left: 800px;
+  background: url("https://i.scdn.co/image/ab67616d00001e02aac03b8098054999839332da")
+    no-repeat center/cover;
+  background-color: antiquewhite;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0.4);
+}

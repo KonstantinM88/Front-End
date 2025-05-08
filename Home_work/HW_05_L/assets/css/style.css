@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+}
+
+main {
+    background-color: lightblue;
+    padding: 24px;
+}
+
+header{
+    height: 100px; 
+}
+
+.navigation {
+    position: fixed;
+    background-color: white;
+    width: 100%;
+    z-index: 3;
+}
+
+.card {
+    background-color: white;
+    padding: 14px;
+    margin: 20px;
+    border-radius: 18px;
+    height: 400px;
+    width: 300px;
+}
+
+.card:nth-child(3){
+    position: relative;
+    left: 350px;
+}
+
+.card:nth-child(4){
+    position: relative;
+    left: 700px;
+}
+
+.card h2 {
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+}
+
+img {
+    width: 200px;    
+}

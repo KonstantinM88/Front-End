@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap");
+
+* {
+  margin: 0; /* 0px */
+  padding: 0; /* 0px */
+  box-sizing: border-box; /* border-box, content-box */
+}
+
+body {
+    background-color: whitesmoke; /* #f0f0f0, #fff, #000 */
+  font-family: "Covered By Your Grace", cursive;
+  font-weight: 400; /* 100 - 900 */
+  font-style: normal; /* normal, italic */
+  font-size: 16px; /* 1em = 16px */
+}
+
+header {
+    background-image: url("./images/Image20250411113033.jpg"); /* url("image.jpg") */
+    height: 400px; /* 0px */
+    background-position: center; /* left, right, center Сопоставление центра элемента с центром фонового изображения  */
+    background-size: cover; /* cover, contain * выравнивание элемента и фоновой картинки по одной из осей */
+  background-color: #f0f0f0; /* #fff, #000 */
+  color: #000; /* #fff, #000 */
+  padding: 20px; /* 0px */
+  text-align: center; /* left, right, center */
+}
+/* Цвета для букв Brazil */
+.b { color: #1a73e8; }   /* синий */
+.r { color: #e91e63; }   /* розовый */
+.a { color: #ff9800; }   /* оранжевый */
+.z { color: #4caf50; }   /* зелёный */
+.i { color: #9c27b0; }   /* фиолетовый */
+.l { color: #f44336; }   /* красный */
+/* Цвета для букв Colombia */
+.c { color: #2196f3; }   /* синий */
+.o { color: #ffeb3b; }   /* жёлтый */
+.m { color: #f11336; }   /* красный */
+/* Цвета для букв Peru */
+
+/* Стиль для параграфа */
+.coffee-text {
+  text-indent: 30px;     /* отступ первой строки */
+  line-height: 1.6;      /* межстрочный интервал для читаемости */
+  font-size: 16px;
+  /* font-family: Arial, sans-serif; */
+}

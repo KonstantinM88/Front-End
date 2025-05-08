@@ -1,0 +1,65 @@
+body {
+    height: 3000px;
+    margin: 0;
+}
+header {
+    height: 100px;
+    width: 100%;
+}
+.navigation {
+    background-color: lightgray;
+    padding: 24px;
+    position: fixed; /* фиксированное позиционирование */
+    top: 0; /* отодвигает на 0px вниз от верхней части окна браузера */
+    z-index: 6; /* определяет порядок наложения элементов */
+    width: 100%;
+  
+}
+
+.card {
+    height: 300px;
+    width: 200px;
+    border-radius: 18px;
+    padding: 10px;
+    margin: 20px;
+ /*   position: static; /* default */
+}
+
+.red {
+    background-color: lightcoral;
+}
+.green {
+    background-color: lightgreen;
+}
+
+/* position: relative; */
+/* top, left, right, bottom */
+/* Задает положение элемента относительно его нормального положения. */
+.relative-block {
+    position: relative; /* относительное позиционирование */
+    top: 50px; /* moves down 50px from its normal position */
+    left: 40px; /* отодвигает на 40px вправо от его нормального положения */
+ /*   background-color: lightblue; */
+}
+
+.circle {
+       
+        border-radius: 50%;
+        background-color: lightsalmon;
+        height: 60px;
+        width: 60px;
+        /* z индекс определяет порядок наложения элементов */
+        z-index: 2; /* определяет порядок наложения элементов */
+     /*   bottom: 200px; /* отодвигает на 200px вверх от его нормального положения */
+        position: fixed; /* фиксированное позиционирование */
+        /* left: 150px;
+        top: -150px; отодвигает на 150px вверх от его нормального положения */
+        bottom: 20px; /* отодвигает на 20px вверх от его нормального положения */    
+}
+
+/* sticky залипает при скроле в определенной позиции относительно родителя */
+
+.sticky-card {
+    position: sticky;
+    top: 100px;
+}

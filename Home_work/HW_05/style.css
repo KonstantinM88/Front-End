@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box; /* включаем box-sizing */
+    margin: 0; /* обнуляем отступы */
+    padding: 0; /* обнуляем поля */
+  }
+  
+  body {
+    font-family: 'Times New Roman', Times, serif, sans-serif; /* шрифт */
+    font-size: 16px; /* размер шрифта */
+    padding-top: 70px; /* отступ под фиксированный header */
+    background-color: #f2f2f2;
+  }
+  
+  /* Хедер */
+  header { /* фиксированный header */
+    position: fixed; /* фиксированное позиционирование */
+    top: 0; /* отступ сверху */
+    left: 0; /* отступ слева */
+    height: 70px; /* высота хедера */
+    width: 100%; /* ширина хедера */
+    background-color: #333; /* цвет фона */
+    color: white; /* цвет текста */
+    text-align: center; /* выравнивание текста по центру */
+    padding: 20px 0; /* внутренний отступ */
+    z-index: 1000; /* чтобы был поверх всех элементов */
+  }
+  
+  /* Основной контейнер */
+  main {
+    padding: 20px; /* внутренний отступ */
+    /* margin-top: 70px;  отступ сверху под фиксированный header */
+  }
+  
+  /* Карточки */
+  .card {
+    position: relative; /* позиционирование для лестничного эффекта */
+    width: 300px; /* ширина карточки */
+    background-color: white; /* цвет фона карточки */
+    border: 1px solid #c51c1c; /* рамка */
+    border-radius: 8px; /* скругление углов */
+    overflow: hidden; /* скрытие переполнения */
+    padding: 15px; /* внутренний отступ */
+    text-align: center; /* выравнивание текста по центру */
+    margin-bottom: 20px; /* отступ между карточками */
+    cursor: pointer; /* указатель при наведении */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* тень */
+    transition: transform 0.3s ease; /* плавный переход при наведении */
+  }
+  
+  .card:hover {
+    transform: scale(1.03); /* увеличение карточки при наведении */
+  }
+  .card img {
+    width: 100px; /* ширина изображения */
+    height: 100px; /* высота изображения */
+    border-radius: 50%; /* скругление изображения */
+    object-fit: cover; /* обрезка изображения */
+    margin-bottom: 10px; /* отступ снизу */
+    transition: transform 0.3s ease; /* плавный переход при наведении */
+  }
+  
+  /* Лестничное смещение карточек */
+  .card1 { /* класс для первой карточки */
+    top: 0; /* отступ сверху */
+    left: 0; /* отступ слева */
+  }
+  
+  .card2 {
+    top: 20px;
+    left: 20px;
+  }
+  
+  .card3 {
+    top: 40px;
+    left: 40px;
+  }
+  
+  /* Размещаем карточки как лестницу */
+  .card1, .card2, .card3 { /* классы для карточек */
+    position: relative; /* позиционирование для лестничного эффекта */
+    margin: 20px; /* отступ между карточками */
+    z-index: 1;
+  }
+  
+
+ 

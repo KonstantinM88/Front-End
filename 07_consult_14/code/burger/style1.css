@@ -1,0 +1,67 @@
+*{
+    padding: 0; /* убираем отступы */
+    margin: 0; /* убираем поля */
+    box-sizing: border-box; /* избавляемся от отступов и границ */
+}
+
+body{
+    overflow: hidden; /* убираем прокрутку */
+}
+/* NAV MENU */
+
+header{
+    display: flex; /* выстраиваем элементы в ряд */
+    background-color: #FFE44D; /* цвет фона */
+    justify-content: space-between; /* выравниваем элементы по краям */
+    align-items: center; /* выравниваем элементы по центру */
+    padding: 20px 60px; /* отступы сверху и снизу 20px, слева и справа 60px */
+    font-size: 20px; /* размер шрифта */
+
+}
+ul{
+    display: flex; /* выстраиваем элементы в ряд */
+    gap: 40px; /* расстояние между элементами */
+}
+header a{
+    text-decoration: none; /* убираем подчеркивание */
+    color: black; /* цвет текста */
+}
+
+ul li{
+    list-style: none; /* убираем маркеры */
+}
+
+.burger_icon{
+    border: 1px solid black; /* рамка */
+    font-size: 20px; /* размер шрифта */
+    padding: 3px 10px; /* отступы сверху и снизу 3px, слева и справа 10px */
+    cursor: pointer; /* курсор в виде руки */
+    display: none; /* скрываем элемент */
+}
+
+@media (max-width: 800px){ /* если ширина экрана меньше 800px */
+    header{
+        position: relative; /* позиционирование относительно родителя */
+    }
+    .burger_icon{
+        display: block; /* показываем элемент */
+    }
+    ul{
+        flex-direction: column; /* выстраиваем элементы в колонку */
+        position: absolute; /* позиционирование относительно родителя */
+        top: 100%; /* отступ сверху 100% */
+        right: 0; /* отступ справа 0 */
+        background-color: #FFE44D; /* цвет фона */
+        gap: 20px; /* расстояние между элементами */
+        width: 120px; /* ширина 120px */
+        transform: translateX(100%);/* сдвигаем элемент на 100% вправо */
+    }
+    ul.nav_active{ /* если класс nav_active */
+        transform: translateX(0); /* сдвигаем элемент на 0% */
+    }
+    ul li{
+        border-bottom: 1px solid black; /* рамка снизу */
+        padding: 15px; /* отступы сверху и снизу 15px */
+    }
+
+}

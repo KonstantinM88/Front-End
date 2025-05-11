@@ -22,4 +22,5 @@ btn.addEventListener('click', () => {
 clonedBtn.addEventListener('click', () => {
   btn.style.backgroundColor = "#9c4a1a";
   btn.style.color = "black";
+    btn.textContent = "Я изменился!";
 });

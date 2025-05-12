@@ -11,12 +11,14 @@ clonedBtn.style.backgroundColor = "#a78b71";
 clonedBtn.style.color = "white";
 
 // обработчик клика по первой кнопке
+clonedBtn.classList.add("second-btn"); // добавляем класс для стилизации второй кнопки
 btn.addEventListener('click', () => {
   // добавим вторую кнопку в документ, только если её ещё нет
   if (!document.getElementById("magic-btn-2")) {
     document.body.appendChild(clonedBtn);
   }
 });
+
 
 // обработчик клика по второй кнопке
 clonedBtn.addEventListener('click', () => {

@@ -20,7 +20,7 @@ document.body.appendChild(form);
 // Поля формы
 const nicknameInput = createInput('Кличка (nickname):', 'nickname', 'text');
 const ageInput = createInput('Возраст (age):', 'age', 'number');
-const breedInput = createInput('Порода (breed):', 'breed', 'text');
+const breedSelect = createBreedSelect('Порода (breed):', 'breed');
 
 // Кнопка
 const button = document.createElement('button');
@@ -34,15 +34,14 @@ button.style.color = 'white';
 button.style.cursor = 'pointer';
 button.style.marginTop = '10px';
 
-// Добавление в форму
-form.append(nicknameInput, ageInput, breedInput, button);
+// Сборка формы
+form.append(nicknameInput, ageInput, breedSelect, button);
 
-// Заголовок списка
+// Заголовок и список
 const listTitle = document.createElement('h2');
 listTitle.textContent = 'Список животных:';
 document.body.appendChild(listTitle);
 
-// Список
 const animalList = document.createElement('ul');
 animalList.id = 'animal-list';
 animalList.style.border = '1px solid #ccc';
@@ -53,13 +52,20 @@ animalList.style.backgroundColor = '#fff';
 animalList.style.boxShadow = '0 2px 5px rgba(0,0,0,0.05)';
 document.body.appendChild(animalList);
 
-// Обработка отправки формы
+// Обработка формы
 form.addEventListener('submit', function (e) {
     e.preventDefault();
 
     const nickname = document.getElementById('nickname').value.trim();
     const age = document.getElementById('age').value.trim();
-    const breed = document.getElementById('breed').value.trim();
+    const breedSelectEl = document.getElementById('breed');
+    let breed = breedSelectEl.value;
+
+    // Если выбран пункт "Другое" — берём значение из input
+    if (breed === 'Другое') {
+        const customBreedInput = breedSelectEl.parentElement.querySelector('input[type="text"]');
+        breed = customBreedInput.value.trim();
+    }
 
     if (nickname && age && breed) {
         const li = document.createElement('li');
@@ -68,10 +74,14 @@ form.addEventListener('submit', function (e) {
         li.style.borderBottom = '1px solid #eee';
         animalList.appendChild(li);
         form.reset();
+
+        // Скрыть поле "другое", если оно показывалось
+        const customInput = breedSelectEl.parentElement.querySelector('input[type="text"]');
+        if (customInput) customInput.style.display = 'none';
     }
 });
 
-// Функция для создания поля формы
+// 📌 Вспомогательная функция: обычное поле ввода
 function createInput(labelText, id, type) {
     const wrapper = document.createElement('div');
     wrapper.style.marginBottom = '10px';
@@ -93,5 +103,74 @@ function createInput(labelText, id, type) {
 
     wrapper.appendChild(label);
     wrapper.appendChild(input);
+    return wrapper;
+}
+
+// 📌 Вспомогательная функция: выпадающий список пород с пунктом "Другое"
+function createBreedSelect(labelText, id) {
+    const wrapper = document.createElement('div');
+    wrapper.style.marginBottom = '10px';
+
+    const label = document.createElement('label');
+    label.textContent = labelText;
+    label.style.display = 'block';
+    label.style.marginBottom = '5px';
+
+    const select = document.createElement('select');
+    select.id = id;
+    select.required = true;
+    select.style.width = '100%';
+    select.style.padding = '8px';
+    select.style.border = '1px solid #ccc';
+    select.style.borderRadius = '5px';
+    select.style.boxSizing = 'border-box';
+
+    const breeds = [
+        'Лабрадор',
+        'Немецкая овчарка',
+        'Бульдог',
+        'Пудель',
+        'Бигль',
+        'Хаски',
+        'Шпиц',
+        'Чихуахуа',
+        'Такса',
+        'Доберман',
+        'Другое'
+    ];
+
+    breeds.forEach(breed => {
+        const option = document.createElement('option');
+        option.value = breed;
+        option.textContent = breed;
+        select.appendChild(option);
+    });
+
+    // Поле "своя порода", скрыто по умолчанию
+    const customInput = document.createElement('input');
+    customInput.type = 'text';
+    customInput.placeholder = 'Введите породу';
+    customInput.style.display = 'none';
+    customInput.style.width = '100%';
+    customInput.style.marginTop = '10px';
+    customInput.style.padding = '8px';
+    customInput.style.border = '1px solid #ccc';
+    customInput.style.borderRadius = '5px';
+    customInput.style.boxSizing = 'border-box';
+
+    // Логика показа/скрытия
+    select.addEventListener('change', () => {
+        if (select.value === 'Другое') {
+            customInput.style.display = 'block';
+            customInput.required = true;
+        } else {
+            customInput.style.display = 'none';
+            customInput.required = false;
+        }
+    });
+
+    wrapper.appendChild(label);
+    wrapper.appendChild(select);
+    wrapper.appendChild(customInput);
     return wrapper;
 }

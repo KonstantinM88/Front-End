@@ -1,0 +1,51 @@
+.add-animal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  
+    margin: 20px;
+    padding: 25px;
+    width: 450px;
+  
+    background-color: lightskyblue;
+    border-radius: 18px;
+  }
+  
+  input {
+    border: none;
+    background-color: white;
+    border-radius: 6px;
+  }
+  
+  .add-btn {
+    background-color: lightpink;
+    border-radius: 12px;
+    height: 24px;
+    width: 50%;
+    padding: 4px;
+    border: none;
+    align-self: center;
+  }
+  
+  .animals-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .animal-card {
+    width: 150px;
+    height: 200px;
+    border-radius: 18px;
+    background-color: lightpink;
+  
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  ul {
+    list-style-type: none;
+  }

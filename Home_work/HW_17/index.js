@@ -4,7 +4,7 @@
 // Цель: преобразовать строку к следующему формату: 📌 "1333 132:123-00"
 function formatString(input) {
     // Ваша реализация здесь
-    const regex = /(\d+)\.(\d+)\.(\d+) (\d+)/;
+    const regex = /(\d+)\.(\d+)\.(\d+) (\d+)/; 
     const match = input.match(regex);
     if (match) {
         const formattedString = `${match[1]} ${match[2]}:${match[3]}-${match[4]}`;
@@ -41,3 +41,17 @@ randomPromise()
     .catch((error) => {
         console.error(error.message);
     });
+// 📘 Задание 3 — Промис с таймаутом
+// Создайте функцию, которая принимает число в секундах и возвращает Promise,
+// который будет выполнен через заданное время.
+function timeoutPromise(seconds) {
+    return new Promise((resolve) =>
+        setTimeout(() =>
+            resolve("Promise resolved after " + seconds + " seconds"),
+    seconds * 1000 )
+    );
+    }
+    // Используйте функцию timeoutPromise() с таймаутом 5 секунд.
+    timeoutPromise(5).then((message) =>
+        console.log(message)
+    );

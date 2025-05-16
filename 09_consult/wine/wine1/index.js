@@ -19,9 +19,9 @@ const render = array =>{
     array
     .filter(el => el.rating.average >=4.8)
     .forEach(({image, wine, winery, rating})=>{
-        const cardElem = document.createElement("div");
-        const titleElem = document.createElement('p');
-        const wineryElem = document.createElement('p');
+        const cardElem = document.createElement("div"); //карточка
+        const titleElem = document.createElement('p'); //заголовок
+        const wineryElem = document.createElement('p'); 
         const ratingElem = document.createElement('p');
         const imgElem = document.createElement('img');
 

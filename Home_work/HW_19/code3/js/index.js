@@ -17,7 +17,7 @@ style.textContent = `
 
   .container {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 40px;
   }
 
@@ -54,44 +54,50 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Получаем контейнер
-const container = document.querySelector('.container');
+// App.jsx или App.js
 
-// Асинхронная функция для получения и отображения данных
-async function loadProducts() {
-  try {
-    const response = await fetch('https://api.escuelajs.co/api/v1/products');
-    const products = await response.json();
-    
-    console.log('📦 Полученные продукты:', products); // ← Пункт 1: Вывод в консоль
+import React, { useEffect, useState } from 'react';
 
-    products.forEach(product => {
-      const imageUrl =
-        Array.isArray(product.images) &&
-        product.images[0] &&
-        product.images[0].startsWith('http')
-          ? product.images[0]
-          : 'https://via.placeholder.com/150?text=No+Image';
+function App() {
+  const [products, setProducts] = useState([]);
 
-      const card = document.createElement('div');
-      card.className = 'product-card';
+  // Асинхронная загрузка продуктов
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch('https://api.escuelajs.co/api/v1/products');
+        const data = await response.json();
+        setProducts(data);
+      } catch (error) {
+        console.error('Ошибка при получении продуктов:', error);
+      }
+    };
 
-      card.innerHTML = `
-        <img src="${imageUrl}" alt="${product.title}">
-        <h3>${product.title}</h3>
-        <p><strong>ID:</strong> ${product.id}</p>
-        <p><strong>Slug:</strong> ${product.slug || '—'}</p>
-        <p><strong>Price:</strong> $${product.price}</p>
-      `;
+    fetchProducts();
+  }, []);
 
-      container.appendChild(card);
-    });
-
-  } catch (error) {
-    console.error('❌ Ошибка загрузки данных:', error);
-    container.textContent = 'Ошибка загрузки данных.';
-  }
+  return (
+    <div>
+      <h1>Список продуктов</h1>
+      <ul style={{ listStyle: 'none', padding: 0 }}>
+        {products.map((product) => (
+          <li key={product.id} style={{ marginBottom: '20px' }}>
+            <h3>{product.title}</h3>
+            <p>{product.description}</p>
+            <img
+              src={product.images[0]}
+              alt={product.title}
+              width="200"
+              referrerPolicy="no-referrer" // обход блокировки
+              onError={(e) => {
+                e.target.src = 'https://via.placeholder.com/200?text=No+Image';
+              }}
+            />
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }
 
-// Запуск
-loadProducts();
+export default App;
